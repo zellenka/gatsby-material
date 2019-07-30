@@ -1,35 +1,51 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import HideOnScroll from "./HideOnScroll";
+import Grid from '@material-ui/core/Grid'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  AppBar: {
+    background: `#fff`,
+  }
+  ,Toolbar: {
+    justifyContent:`space-between`
+  }
+}));
+
+const Header = ({ siteTitle }) => {
+  const classes = useStyles();
+  return (
+  <header>
+    <HideOnScroll threshold={100}>
+    <div className={classes.root}>
+      <AppBar className={classes.AppBar} position="fixed">
+        <Toolbar className={classes.justifyContent} variant="dense">
+        <Grid container spacing={2} justify="space-between" margin="0">
+        <Grid item xs={6} sm={6}>
+          <Typography color="primary">
+            Logo
+          </Typography>
+          </Grid>
+          <Grid item xs={6} sm={6}>
+          <Typography color="primary">
+            Menu
+          </Typography>
+          </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
     </div>
+    </HideOnScroll>
   </header>
-)
+)}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
