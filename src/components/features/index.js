@@ -12,7 +12,7 @@ const featuresItem = () => {
       <Card className={Features.card}>
         <CardContent>
           <Typography color="primary" variant="h3">
-          <p><i class="material-icons">account_balance_wallet</i></p>
+          <p><i className="material-icons">account_balance_wallet</i></p>
             heading
           </Typography>
           <Typography color="primary">
