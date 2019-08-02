@@ -16,6 +16,7 @@ import ContactForm from '../components/contactForm/'
 import Calc from '../components/calc/'
 import OrderSteps from '../components/orderSteps/'
 import OrderForm from '../components/orederForm/'
+import Testimonials from '../components/testimonials'
 
 const useStyles = makeStyles(theme => ({
   Paper: {
@@ -69,6 +70,13 @@ const IndexPage = () => {
         Форма заказа
       </Typography>
       <OrderForm />
+    </Paper>
+
+    <Paper className={classes.Paper} id="order-form">
+    <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
+        Отзывы
+      </Typography>
+      <Testimonials />
     </Paper>
 
 
