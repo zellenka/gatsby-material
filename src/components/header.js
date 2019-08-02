@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography'
 import HideOnScroll from "./HideOnScroll"
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,8 +23,22 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+
 const Header = ({ siteTitle }) => {
   const classes = useStyles();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  function handleClick(event) {
+
+    setAnchorEl(event.currentTarget);
+  }
+
+  function handleClose(event) {
+    console.log(event.currentTarget.href)
+    setAnchorEl(null);
+  }
+
   return (
     <header>
       <HideOnScroll threshold={100}>
@@ -36,16 +52,26 @@ const Header = ({ siteTitle }) => {
                   </Typography>
                 </Grid>
                 <Grid item xs={6} sm={6}>
-
-                  <Button variant="contained" href="#calc-block" className={classes.button}>
-                    Калькулятор
-                    </Button>
-                    <Button variant="contained" href="#order-form" className={classes.button}>
-                    Форма заказа
-                    </Button>
-                    <Button variant="contained" href="#calc-block" className={classes.button}>
-                    Калькулятор
-                    </Button>
+                  <Button aria-controls="simple-menu" aria-haspopup="true" variant="contained" color="primary" onClick={handleClick}>
+                    Open Menu
+                </Button>
+                  <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                  >
+                    <MenuItem>
+                    <a color="primary" onClick={handleClose} href="#calc-block">Калькулятор</a>
+                    </MenuItem>
+                    <MenuItem>
+                    <a color="primary" onClick={handleClose} href="#order-form">Форма заказа</a>
+                    </MenuItem>
+                    <MenuItem>
+                    <a color="primary" onClick={handleClose} href="#order-form">Logout</a>
+                    </MenuItem>
+                  </Menu>
                 </Grid>
               </Grid>
             </Toolbar>

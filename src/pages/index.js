@@ -50,8 +50,6 @@ const IndexPage = () => {
         <FeatureItem />
         <FeatureItem />
       </Grid>
-
-      <ContactForm />
       
     </Paper>
 
@@ -78,6 +76,16 @@ const IndexPage = () => {
       </Typography>
       <Testimonials />
     </Paper>
+
+<div>
+    <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
+    Остались вопросы, пишите
+      </Typography>
+      <ContactForm />
+      </div>
+ 
+
+
 
 
     <p>Now go build something great.</p>

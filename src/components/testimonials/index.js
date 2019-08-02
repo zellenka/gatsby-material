@@ -74,12 +74,12 @@ const testimonials = () => {
         nextButton={
           <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
             Next
-          {theme.direction === 'rtl' ? <i class="material-icons">keyboard_arrow_left</i> : <i class="material-icons">keyboard_arrow_right</i>}
+          {theme.direction === 'rtl' ? <i className="material-icons">keyboard_arrow_left</i> : <i className="material-icons">keyboard_arrow_right</i>}
           </Button>
         }
         backButton={
           <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? <i class="material-icons">keyboard_arrow_right</i> : <i class="material-icons">keyboard_arrow_left</i>}
+            {theme.direction === 'rtl' ? <i className="material-icons">keyboard_arrow_right</i> : <i className="material-icons">keyboard_arrow_left</i>}
             Back
         </Button>
         }
