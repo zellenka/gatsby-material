@@ -4,15 +4,18 @@ import contactFormStyles from "./contactForm.module.css"
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
+import Container from '@material-ui/core/Container';
 
 const contactForm = () => {
   
   return(
+    <Container>
     <form noValidate autoComplete="off">
     <Typography color="primary">
     Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.
     </Typography>
-    <Grid container spacing={2} justify="flex-start" margin="0">
+
+    <Grid container spacing={2} justify="flex-start">
     <Grid item xs={12} sm={6} md={6}>
     <TextField
     fullWidth
@@ -50,7 +53,9 @@ const contactForm = () => {
             variant="outlined" />
             </Grid>
             </Grid>
+            
     </form>
+    </Container>
   )
 }
 

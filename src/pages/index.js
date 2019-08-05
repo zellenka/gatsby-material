@@ -17,6 +17,7 @@ import Calc from '../components/calc/'
 import OrderSteps from '../components/orderSteps/'
 import OrderForm from '../components/orederForm/'
 import Testimonials from '../components/testimonials'
+import { relative } from "upath";
 
 const useStyles = makeStyles(theme => ({
   Paper: {
@@ -24,76 +25,73 @@ const useStyles = makeStyles(theme => ({
     margin: `${theme.spacing(2)}px auto`,
     boxShadow: '0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2)',
     maxWidth: '1200px'
+  },
+  FirstPaper: {
+    position: `relative`
   }
 }));
 
 const IndexPage = () => {
   const classes = useStyles();
   return (
-  <Layout>
-    <SEO title="Home" />
-    <Hero />
-    <Paper className={classes.Paper}>
+    <Layout>
+      <SEO title="Home" />
+      <Hero />
+      <Paper className={`${classes.Paper} ${classes.FirstPaper}`}>
 
-      <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
-        ВЫКУП И ДОСТАВКА ТОВАРОВ ИЗ ИНТЕРНЕТ-МАГАЗИНОВ КИТАЯ В УКРАИНУ
+        <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
+          ВЫКУП И ДОСТАВКА ТОВАРОВ ИЗ ИНТЕРНЕТ-МАГАЗИНОВ КИТАЯ В УКРАИНУ
       </Typography>
-      <Typography component="p" className="paper-text">
-        Желаете выгодно купить товар из интернет-магазинов Китая, получить товар оперативной и надежной доставкой в Украину, на самых выгодных условиях?
-        «Trans-Agent» — Ваш компетентный помощник в этом! Все представленные нами услуги выполняются на высоком уровне профессионализма, поэтому успех Вам гарантирован!
-        Мы осуществляем выкуп товаров с таких торговых площадок, как: Taobao, 1688, Тmall, Wechat, Alibaba, и др.
+        <Typography component="p" className="paper-text">
+          Желаете выгодно купить товар из интернет-магазинов Китая, получить товар оперативной и надежной доставкой в Украину, на самых выгодных условиях?
+          «Trans-Agent» — Ваш компетентный помощник в этом! Все представленные нами услуги выполняются на высоком уровне профессионализма, поэтому успех Вам гарантирован!
+          Мы осуществляем выкуп товаров с таких торговых площадок, как: Taobao, 1688, Тmall, Wechat, Alibaba, и др.
       </Typography>
-  
-      <Grid container spacing={2} justify="space-between" margin="0">
-        <FeatureItem />
-        <FeatureItem />
-        <FeatureItem />
-        <FeatureItem />
-      </Grid>
-      
-    </Paper>
 
-    <Paper className={classes.Paper}>
-      <Calc />
-    </Paper>
-    <Paper className={classes.Paper}>
-    <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
-        Как заказать и оплатить
-      </Typography>
-      <OrderSteps />
-    </Paper>
+        <Grid container spacing={2} justify="space-between" margin="0">
+          <FeatureItem />
+          <FeatureItem />
+          <FeatureItem />
+          <FeatureItem />
+        </Grid>
 
-    <Paper className={classes.Paper} id="order-form">
-    <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
-        Форма заказа
-      </Typography>
-      <OrderForm />
-    </Paper>
+      </Paper>
 
-    <Paper className={classes.Paper} id="order-form">
-    <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
-        Отзывы
+      <Paper className={classes.Paper}>
+        <Calc />
+      </Paper>
+      <Paper className={classes.Paper}>
+        <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
+          Как заказать и оплатить
       </Typography>
-      <Testimonials />
-    </Paper>
+        <OrderSteps />
+      </Paper>
 
-<div>
-    <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
-    Остались вопросы, пишите
+      <Paper className={classes.Paper} id="order-form">
+        <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
+          Форма заказа
       </Typography>
-      <ContactForm />
+        <OrderForm />
+      </Paper>
+
+      <Paper className={classes.Paper} id="order-form">
+        <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
+          Отзывы
+      </Typography>
+        <Testimonials />
+      </Paper>
+
+      <div className="orderForm-container">
+        <Typography variant="h2" align="center" className="paper-heading" gutterBottom={true}>
+          Остались вопросы, пишите
+      </Typography>
+        <ContactForm />
       </div>
- 
 
 
 
-
-    <p>Now go build something great.</p>
-    {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div> */}
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)}
+    </Layout>
+  )
+}
 
 export default IndexPage

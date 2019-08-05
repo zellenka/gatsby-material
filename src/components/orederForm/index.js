@@ -7,7 +7,7 @@ import Fab from '@material-ui/core/Fab'
 
 const orderForm = () => {
   return (
-    <form>
+    <form action="https://app.99inbound.com/api/e/SaWZW9Ly" method="POST">
       <Grid container spacing={2} justify="flex-start" margin="0">
         <Grid item xs={12} sm={12} md={6}>
           <TextField
@@ -78,7 +78,7 @@ const orderForm = () => {
       <Fab color="primary" >
         <i className="material-icons">remove</i>
       </Fab>
-        <Fab variant="extended" >
+        <Fab variant="extended" type="submit">
         <i className="material-icons">send</i>
         send
       </Fab>

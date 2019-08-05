@@ -23,7 +23,25 @@ body {
 }
 
 @media (max-width: 992px) {
-  .paper-heading {
+html {
+  font-size: 14px
+}
+.paper-text {
+  padding: 0;
+}
+.paper-heading {
+  padding: 0 1rem;
+}
+}
+
+@media (max-width: 480px) {
+  h1.MuiTypography-h1 {
+    font-size: 2.5rem
+  }
+  h2.MuiTypography-h2{
     font-size: 2rem
   }
-}
+  h3.MuiTypography-h3, h4.MuiTypography-h4 {
+    font-size: 1.5rem
+  }
+  }

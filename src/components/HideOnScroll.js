@@ -1,5 +1,5 @@
 import React from "react";
-import { Slide } from "@material-ui/core";
+import { Fade  } from "@material-ui/core";
 
 function getScrollY(scroller) {
   return scroller.pageYOffset !== undefined
@@ -47,8 +47,8 @@ export default function HideOnScroll(props) {
   const hide = useHideOnScroll({ threshold, scroller });
 
   return (
-    <Slide appear={false} direction="down" in={!hide} {...other}>
+    <Fade  appear={false} timeout={{ enter: 1000, exit: 500,}} in={!hide} {...other}>
       {children}
-    </Slide>
+    </Fade >
   );
 }
