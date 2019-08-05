@@ -69,7 +69,7 @@ const Header = ({ siteTitle }) => {
                 </Grid>
                 <Grid item xs={6} sm={6} className={classes.headerRightPart}>
                   <Button aria-controls="simple-menu" aria-haspopup="true" variant="contained" color="primary" onClick={handleClick}>
-                  <i class="material-icons">menu</i> Меню
+                  <i className="material-icons">menu</i> Меню
                 </Button>
                 <a href="#" className={classes.linkImgContainer}><img className={classes.linkImg} src={InstagramLogo} /></a>
                   <Menu

@@ -1,15 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
 import Grid from '@material-ui/core/Grid'
-import Container from '@material-ui/core/Container';
 import Hero from '../components/hero/'
 import FeatureItem from '../components/features/'
 import ContactForm from '../components/contactForm/'
@@ -17,7 +12,7 @@ import Calc from '../components/calc/'
 import OrderSteps from '../components/orderSteps/'
 import OrderForm from '../components/orederForm/'
 import Testimonials from '../components/testimonials'
-import { relative } from "upath";
+
 
 const useStyles = makeStyles(theme => ({
   Paper: {

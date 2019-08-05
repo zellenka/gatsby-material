@@ -1,6 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
-import calcStyles from "./calc.module.css"
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
@@ -17,8 +15,6 @@ const calc = () => {
   const [totalPrice, setTotalPrice] = React.useState('...')
 
   const [weight, setWeight] = React.useState('...')
-
-  const [exchange, setExchange] = React.useState({});
 
   const handleChange = props => (event) => {
     setValues({ ...values, [props]: Number(event.target.value) })
