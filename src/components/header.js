@@ -95,7 +95,7 @@ const Header = ({ siteTitle }) => {
                       in={Boolean(anchorEl)}
                       {...(Boolean(anchorEl) ? { timeout: 1000 } : {})} >
                     <MenuItem>
-                      <a color="primary" onClick={handleClose} href="#order-form">Logout</a>
+                      <a color="primary" onClick={handleClose} href="/post/hello-world">Logout</a>
                     </MenuItem>
                     </Grow>
                     <Grow
